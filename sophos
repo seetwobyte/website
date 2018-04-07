@@ -1,0 +1,14 @@
+resource "aws_instance" "sophos-test-1" {
+  ami = "ami-0fc06119"
+  instance_type = "m4.medium"
+  count = 1
+  availability_zone = "us-east-1a"
+  subnet_id = "${aws_subnet.public_sophos_subnet-1.id}
+  tags {
+  Name = " Sophos-test-1"}
+
+
+}
+
+
+

@@ -1,0 +1,21 @@
+resource "aws_vpc" "Sandox-VPC" {
+  cidr_block = "10.20.30.0/20"
+  enable_dns_hostnames = "true"
+  tags {
+    Name = "Sandbox-test-VPC"
+
+  }
+
+}
+
+
+###############     subnets          #######################
+
+resource "aws_subnet" "public_sophos_subnet-1" {
+  cidr_block = "10.20.30.0/25"
+  map_public_ip_on_launch = false
+  availability_zone = "us-esast-1a"
+  tags {
+    Name = "sophos_subnet-1"
+  }
+}
